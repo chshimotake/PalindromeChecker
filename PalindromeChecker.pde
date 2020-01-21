@@ -17,7 +17,7 @@ public void setup()
 public boolean palindrome(String word)
 {
   //your code here
-  if(word.equals(reverse(word)))
+  if(checker(word).equals(reverse(checker(word))))
   {
     return true;
   }else{
@@ -33,5 +33,7 @@ public String reverse(String str)
   }
   return store;
 }
-
-
+public String checker(String sWord)
+{
+  return sWord.replaceAll("\\s", "").replaceAll("\\W", "").replaceAll("\\d", "").replaceAll("_", "").toLowerCase();
+}
